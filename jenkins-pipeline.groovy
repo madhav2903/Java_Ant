@@ -24,23 +24,23 @@ pipeline {
 
         }
 
-        post {
-        always {
+       // post {
+        //always {
                 // Archive the executable
-                archiveArtifacts artifacts: 'build/*.jar', fingerprint: true
+              //  archiveArtifacts artifacts: 'build/*.jar', fingerprint: true
                 
-            }
-        }
+           // }
+     //   }
 
         stage('Test') {
 
             steps('SonarQube Analysis') {
                 
-                withSonarQubeEnv('sonarserver') {
+               // withSonarQubeEnv('sonarserver') {
 
                     sh "ant run sonar"
 
-                }
+              //  }
 
             }
         }
