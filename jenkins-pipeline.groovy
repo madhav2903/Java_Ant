@@ -18,7 +18,7 @@ pipeline {
 
             steps {
 
-                sh 'mvn clean package'
+                sh 'ant clean package'
 
             }
 
@@ -30,7 +30,7 @@ pipeline {
                 
                 withSonarQubeEnv('sonarserver') {
 
-                    sh "mvn sonar:sonar"
+                    sh "ant sonar:sonar"
 
                 }
 
