@@ -18,7 +18,8 @@ pipeline {
 
             steps {
 
-                sh 'ant build'
+                sh 'ant -version'
+                sh 'ant clean compile test package war'
 
             }
 
