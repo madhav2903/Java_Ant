@@ -8,13 +8,13 @@ pipeline {
         }
         stage('build'){
             steps {
-                sh 'npm install'
+                sh 'mvn clean package'
             }
         }
         stage('executeSonarqubeReport')
         {
             steps {
-                sh "npm run sonar"
+                sh "mvn sonar:sonar"
             }
         }
     }
