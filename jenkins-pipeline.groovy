@@ -18,8 +18,7 @@ pipeline {
 
             steps {
 
-                sh 'ant -version'
-                sh 'ant clean compile test package jar'
+                sh 'build.xml'
 
             }
 
