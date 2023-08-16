@@ -18,7 +18,7 @@ pipeline {
 
             steps {
 
-                sh 'ant clean package'
+                sh 'ant build'
 
             }
 
