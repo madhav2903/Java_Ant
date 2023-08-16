@@ -28,7 +28,7 @@ pipeline {
             
             steps {
                 // Archive the executable
-                archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+                archiveArtifacts artifacts: 'build/*.jar', fingerprint: true
                 
             }
         }
