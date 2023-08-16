@@ -1,21 +1,51 @@
 pipeline {
+
     agent any
+
     stages {
-        stage('check'){
+
+        stage('pull-code') {
+
             steps {
-        git credentialsId: 'Github', url: 'https://github.com/madhav2903/Java_Ant.git'
+
+                git credentialsId: 'Github', url: 'https://github.com/madhav2903/Java_Ant.git'
+
             }
+
         }
-        stage('build'){
+
+        stage('Build') {
+
             steps {
+
                 sh 'mvn clean package'
+
+            }
+
+        }
+
+        stage('Test') {
+
+            steps('SonarQube Analysis') {
+                
+                withSonarQubeEnv('sonarserver') {
+
+                    sh "mvn sonar:sonar"
+
+                }
+
             }
         }
-        stage('executeSonarqubeReport')
-        {
+
+        stage('Deploy') {
+                
             steps {
-                sh "mvn sonar:sonar"
+                    deploy adapters: [tomcat9(credentialsId: 'TomJen', path: '', url: 'http://localhost:8081// opt/tomcat/webapps/')], contextPath: 'null', war: '**/*.jar'
+                    
             }
+
         }
+
+        
     }
 }
