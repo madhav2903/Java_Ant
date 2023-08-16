@@ -18,15 +18,14 @@ pipeline {
 
             steps {
 
-                sh 'ant build.xml'
+                sh 'ant -version'
 
             }
 
         }
 
-        stage('Archive Artifacts') {
-            
-            steps {
+        post {
+        always {
                 // Archive the executable
                 archiveArtifacts artifacts: 'build/*.jar', fingerprint: true
                 
