@@ -18,11 +18,19 @@ pipeline {
 
             steps {
 
-                sh 'ant -f build.xml'
+                sh 'ant build'
 
             }
 
         }
+
+        stage('Archive Artifacts') {
+            
+            steps {
+                // Archive the executable
+                archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+                
+            }
 
         stage('Test') {
 
@@ -30,7 +38,7 @@ pipeline {
                 
                 withSonarQubeEnv('sonarserver') {
 
-                    sh "ant sonar:sonar"
+                    sh "ant run sonar"
 
                 }
 
