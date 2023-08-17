@@ -19,7 +19,7 @@
 <!-- build.xml -->  
 <!-- Define the SonarQube global properties (the most usual way is to pass these properties via the command line) -->
 
-<project name="Java_Ant" default="master" basedir="." xmlns:sonar="antlib:org.sonar.ant">
+<project name="Java_Ant" default="main" basedir="." xmlns:sonar="antlib:org.sonar.ant">
 
 <property name="sonar.host.url" value="http://localhost:9000" />
   
