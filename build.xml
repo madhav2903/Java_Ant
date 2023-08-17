@@ -16,7 +16,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 -->
-<project name="ANT" default="master" basedir=".">
+<project name="apache-ant" default="main" basedir=".">
 
   <!-- Give user a chance to override without editing this file
        (and without typing -D on each invocation) -->
@@ -29,7 +29,7 @@
          Set the properties that control names and versions
        ===================================================================
   -->
-  <property name="Name" value="ANT"/>
+  <property name="Name" value="Apache-Ant"/>
   <property name="name" value="ant"/>
   <!-- this is the directory corresponding to groupId of Ant in the Maven repository -->
   <property name="groupid" value="org/apache/ant"/>
