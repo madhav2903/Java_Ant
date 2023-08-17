@@ -33,11 +33,11 @@ pipeline {
            // }
      //   }
 
-        stage('Test') {
+  //      stage('Test') {
 
-            steps('Sonarqube Analysis') {
+    //        steps('Sonarqube Analysis') {
         
-                sh "ant sonar"
+   //             sh "ant sonar"
 
        // snykSecurity(
 
@@ -55,14 +55,14 @@ pipeline {
             }
         }
 
-       // stage('Deploy') {
+        stage('Deploy') {
                 
-        //    steps {
-         //           deploy adapters: [tomcat9(credentialsId: 'TomJen', path: '', url: 'http://localhost:8081// opt/tomcat/webapps/')], contextPath: 'null', war: '**/*.jar'
+           steps {
+                   deploy adapters: [tomcat9(credentialsId: 'TomJen', path: '', url: 'http://localhost:8081// opt/tomcat/webapps/')], contextPath: 'null', war: '**/*.jar'
                     
-   //         }
+          }
 
-    //    }
+       }
 
         
     }
