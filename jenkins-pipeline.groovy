@@ -37,7 +37,7 @@ pipeline {
 
             steps('Sonarqube Analysis') {
         
-                sh "${scannerHome}/bin/sonar-scanner"
+                sh "ant sonar"
 
        // snykSecurity(
 
