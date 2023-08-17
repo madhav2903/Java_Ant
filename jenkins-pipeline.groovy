@@ -37,7 +37,8 @@ pipeline {
 
           steps('Sonarqube Analysis') {
         
-              sh "ant sonar -v"
+              //sh "ant sonar -v"
+              sh "antlib:org.sonar.ant:sonar"
 
        // snykSecurity(
 
