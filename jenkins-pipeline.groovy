@@ -35,11 +35,20 @@ pipeline {
 
         stage('Test') {
 
-            steps('SonarQube Analysis') {
+            steps('Snyk Analysis') {
                 
                // withSonarQubeEnv('sonarserver') {
 
-                    sh "ant run sonar"
+        snykSecurity(
+
+          snykInstallation: 'snyk@latest',
+
+          snykTokenId: '14c891cf-5828-4ebb-ab4e-c4c55b468cc1',
+
+          // place other parameters here
+
+        )
+                
 
               //  }
 
