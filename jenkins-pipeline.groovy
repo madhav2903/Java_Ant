@@ -19,6 +19,7 @@ pipeline {
             steps {
 
                 sh 'ant -version'
+                sh 'ant build.xml'
 
             }
 
