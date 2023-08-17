@@ -35,13 +35,13 @@ pipeline {
 
         stage('Test') {
 
-            steps('Snyk Analysis') {
+            steps('Sonarqube Analysis') {
                 
-                def scannerHome = tool 'sonarscanner';
+                scannerHome = tool 'sonarscanner';
                 
                 withSonarQubeEnv() {
         
-                 sh "${scannerHome}/bin/sonar-scanner"
+                sh "${scannerHome}/bin/sonar-scanner"
 
        // snykSecurity(
 
