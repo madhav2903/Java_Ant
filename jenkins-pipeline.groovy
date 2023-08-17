@@ -37,20 +37,21 @@ pipeline {
 
             steps('Snyk Analysis') {
                 
-               // withSonarQubeEnv('sonarserver') {
+                withSonarQubeEnv('sonarserver') {
+                    sh 'ant sonar:sonar'
 
-        snykSecurity(
+       // snykSecurity(
 
-          snykInstallation: 'snyk@latest',
+          //snykInstallation: 'snyk@latest',
 
-          snykTokenId: '14c891cf-5828-4ebb-ab4e-c4c55b468cc1',
+         // snykTokenId: '14c891cf-5828-4ebb-ab4e-c4c55b468cc1',
 
           // place other parameters here
 
-        )
+      //  )
                 
 
-              //  }
+               }
 
             }
         }
