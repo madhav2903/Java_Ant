@@ -38,7 +38,7 @@ pipeline {
             steps('Snyk Analysis') {
                 
                 withSonarQubeEnv('sonarserver') {
-                    sh 'ant sonar:sonar'
+                    sh 'ant sonar'
 
        // snykSecurity(
 
