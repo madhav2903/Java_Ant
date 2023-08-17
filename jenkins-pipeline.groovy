@@ -37,8 +37,11 @@ pipeline {
 
             steps('Snyk Analysis') {
                 
-                withSonarQubeEnv('sonarserver') {
-                    sh 'ant sonar'
+                def scannerHome = tool 'SonarScanner';
+                
+                withSonarQubeEnv() {
+        
+                 sh "${scannerHome}/bin/sonar-scanner"
 
        // snykSecurity(
 
