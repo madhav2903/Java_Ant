@@ -16,15 +16,16 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 -->
-<!-- build.xml -->
-<project name="Java_Ant" default="all" basedir="." xmlns:sonar="antlib:org.sonar.ant">
-  
+<!-- build.xml -->  
 <!-- Define the SonarQube global properties (the most usual way is to pass these properties via the command line) -->
+
+<project name="Java_Ant" default="all" basedir="." xmlns:sonar="antlib:org.sonar.ant">
+
 <property name="sonar.host.url" value="http://localhost:9000" />
   
 <!-- Define the SonarQube project properties -->
 <property name="sonar.projectKey" value="Java_Ant" />
-<property name="sonar.projectName" value="Java_A" />
+<property name="sonar.projectName" value="Java_Ant" />
 <property name="sonar.projectVersion" value="1.0" />
 <property name="sonar.sources" value="src" />
 <property name="sonar.java.binaries" value="build" />
@@ -40,8 +41,6 @@
     <!-- Execute SonarScanner for Ant Analysis -->
     <sonar:sonar />
 </target>
-<project name="Java_Ant" default="main" basedir=".">
-
   <!-- Give user a chance to override without editing this file
        (and without typing -D on each invocation) -->
   <property file=".ant.properties"/>
