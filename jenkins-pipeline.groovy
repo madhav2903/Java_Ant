@@ -36,11 +36,6 @@ pipeline {
         stage('Test') {
 
             steps('Sonarqube Analysis') {
-                environment {
-                
-                scannerHome = tool 'sonarscanner';
-                }
-                withSonarQubeEnv() {
         
                 sh "${scannerHome}/bin/sonar-scanner"
 
@@ -55,7 +50,7 @@ pipeline {
       //  )
                 
 
-               }
+            
 
             }
         }
