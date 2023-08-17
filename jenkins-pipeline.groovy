@@ -4,26 +4,26 @@ pipeline {
 
     stages {
 
-        stage('pull-code') {
+        //stage('pull-code') {
 
-            steps {
+         //   steps {
 
-                git credentialsId: 'Github', url: 'https://github.com/madhav2903/Java_Ant.git'
+            //    git credentialsId: 'Github', url: 'https://github.com/madhav2903/Java_Ant.git'
 
-            }
+         //   }
 
-        }
+     //   }
 
-        stage('Build') {
+        //stage('Build') {
 
-            steps {
+         //   steps {
 
-                sh 'ant -version'
-                sh 'ant'
+          //      sh 'ant -version'
+           //     sh 'ant'
 
-            }
+          //  }
 
-        }
+       // }
 
        // post {
         //always {
@@ -55,14 +55,14 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
+       // stage('Deploy') {
                 
-            steps {
-                    deploy adapters: [tomcat9(credentialsId: 'TomJen', path: '', url: 'http://localhost:8081// opt/tomcat/webapps/')], contextPath: 'null', war: '**/*.jar'
+        //    steps {
+         //           deploy adapters: [tomcat9(credentialsId: 'TomJen', path: '', url: 'http://localhost:8081// opt/tomcat/webapps/')], contextPath: 'null', war: '**/*.jar'
                     
-            }
+   //         }
 
-        }
+    //    }
 
         
     }
