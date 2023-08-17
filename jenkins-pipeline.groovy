@@ -33,11 +33,11 @@ pipeline {
            // }
      //   }
 
-  //      stage('Test') {
+       stage('Test') {
 
-    //        steps('Sonarqube Analysis') {
+          steps('Sonarqube Analysis') {
         
-   //             sh "ant sonar"
+              sh "ant sonar -v"
 
        // snykSecurity(
 
@@ -49,7 +49,8 @@ pipeline {
 
       //  )
                 
-
+          }
+       }
             
 
             
