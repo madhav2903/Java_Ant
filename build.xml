@@ -16,7 +16,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 -->
-<project name="ant" default="master" basedir=".">
+<project name="ANT" default="master" basedir=".">
 
   <!-- Give user a chance to override without editing this file
        (and without typing -D on each invocation) -->
