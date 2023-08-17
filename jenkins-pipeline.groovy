@@ -14,16 +14,16 @@ pipeline {
 
        }
 
-        //stage('Build') {
+        stage('Build') {
 
-         //   steps {
+            steps {
 
-          //      sh 'ant -version'
-           //     sh 'ant'
+               sh 'ant -version'
+               sh 'ant'
 
-          //  }
+          }
 
-       // }
+        }
 
        // post {
         //always {
