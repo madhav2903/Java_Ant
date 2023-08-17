@@ -37,7 +37,7 @@ pipeline {
 
             steps('Snyk Analysis') {
                 
-                def scannerHome = tool 'SonarScanner';
+                def scannerHome = tool 'sonarscanner';
                 
                 withSonarQubeEnv() {
         
