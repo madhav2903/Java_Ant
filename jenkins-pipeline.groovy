@@ -4,15 +4,15 @@ pipeline {
 
     stages {
 
-        //stage('pull-code') {
+        stage('pull-code') {
 
-         //   steps {
+           steps {
 
-            //    git credentialsId: 'Github', url: 'https://github.com/madhav2903/Java_Ant.git'
+               git credentialsId: 'Github', url: 'https://github.com/madhav2903/Java_Ant.git'
 
-         //   }
+           }
 
-     //   }
+       }
 
         //stage('Build') {
 
