@@ -38,7 +38,7 @@ pipeline {
           steps('Sonarqube Analysis') {
         
               //sh "ant sonar -v"
-              sh "ant run sonar"
+              sh "ant sonar -Dsonar.login=yourAuthenticationToken"
 
        // snykSecurity(
 
