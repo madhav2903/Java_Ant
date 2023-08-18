@@ -33,23 +33,23 @@ pipeline {
            // }
      //   }
 
-       stage('Test') {
+      stage('Test') {
 
           steps('Sonarqube Analysis') {
         
               //sh "ant sonar -v"
               //sh "ant sonar -Dsonar.login=yourAuthenticationToken"
-              sh "antlib:org.sonar.ant:sonar"
+             // sh "antlib:org.sonar.ant:sonar"
 
-       // snykSecurity(
+        snykSecurity(
 
-          //snykInstallation: 'snyk@latest',
+          snykInstallation: 'snyk@latest',
 
-         // snykTokenId: '14c891cf-5828-4ebb-ab4e-c4c55b468cc1',
+         snykTokenId: 'ab763548-654a-4eb2-b9a5-30a0368044b0',
 
           // place other parameters here
 
-      //  )
+        )
                 
           }
        }
