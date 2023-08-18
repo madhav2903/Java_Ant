@@ -46,7 +46,7 @@ pipeline {
          -Dsonar.projectKey=Java_Ant \
          -Dsonar.projectName=Java_Ant \
          -Dsonar.sources=src/ \
-         -Dsonar.java.binaries=target/classes/ \
+         -Dsonar.java.binaries=build/classes/ \
          -Dsonar.exclusions=src/test/java/****/*.java \
          -Dsonar.java.libraries=/var/lib/jenkins/.m2/**/*.jar \
          -Dsonar.projectVersion=${BUILD_NUMBER}-${GIT_COMMIT_SHORT}'''
