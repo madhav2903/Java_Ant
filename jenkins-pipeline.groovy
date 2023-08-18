@@ -37,9 +37,9 @@ pipeline {
 
      //     steps('Sonarqube Analysis') {
         
-       environment {
-       SCANNER_HOME = tool 'SonarScanner'
-    }
+     //  environment {
+    //   SCANNER_HOME = tool 'SonarScanner'
+  //  }
     steps {
     withSonarQubeEnv(credentialsId: 'SONJEN', installationName: 'sonarscanner') {
          sh '''$SCANNER_HOME/bin/sonar-scanner \
