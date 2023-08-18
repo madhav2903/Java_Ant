@@ -41,10 +41,10 @@ pipeline {
     //   SCANNER_HOME = tool 'SonarScanner'
   //  }
     steps {
-    withSonarQubeEnv(credentialsId: 'SONJEN', installationName: 'sonarscanner') {
+    withSonarQubeEnv(credentialsId: 'SONJEN'){ //installationName: 'sonarscanner') {
          sh '''$SCANNER_HOME/bin/sonar-scanner \
-         -Dsonar.projectKey= \
-         -Dsonar.projectName=projectName \
+         -Dsonar.projectKey=Java_Ant \
+         -Dsonar.projectName=Java_Ant \
          -Dsonar.sources=src/ \
          -Dsonar.java.binaries=target/classes/ \
          -Dsonar.exclusions=src/test/java/****/*.java \
