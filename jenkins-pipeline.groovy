@@ -37,9 +37,28 @@ pipeline {
 
           steps('Sonarqube Analysis') {
         
-           environment {
-      SCANNER_HOME = tool 'sonarscanner'
+          environment {
+      SCANNER_HOME = tool 'SonarScanner'
     }
+    steps {
+    withSonarQubeEnv(credentialsId: 'SONJEN', installationName: 'sonarscanner') {
+         sh '''$SCANNER_HOME/bin/sonar-scanner \
+         -Dsonar.projectKey= \
+         -Dsonar.projectName=projectName \
+         -Dsonar.sources=src/ \
+         -Dsonar.java.binaries=target/classes/ \
+         -Dsonar.exclusions=src/test/java/****/*.java \
+         -Dsonar.java.libraries=/var/lib/jenkins/.m2/**/*.jar \
+         -Dsonar.projectVersion=${BUILD_NUMBER}-${GIT_COMMIT_SHORT}'''
+       }
+     }
+}
+   stage('SQuality Gate') {
+     steps {
+       timeout(time: 1, unit: 'MINUTES') {
+       waitForQualityGate abortPipeline: true
+       }
+  }
               //sh "ant sonar -Dsonar.login=yourAuthenticationToken"
              // sh "antlib:org.sonar.ant:sonar"
 
