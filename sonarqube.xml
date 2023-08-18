@@ -2,7 +2,7 @@
 
   <!-- gets overridden by the jenkins job -->
   <property name="sonar.host.url" value="http://localhost:9000" />
-  <property name="sonar.login" value="xxx" />
+  <property name="sonar.login" value="sqp_19bab5eceaba0110396d63e03db3392ac6cd0ee7" />
 
   <!-- source SonarQube project properties -->
   <property file="sonar-project.properties"/>
