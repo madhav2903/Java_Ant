@@ -41,7 +41,7 @@ pipeline {
     //   SCANNER_HOME = tool 'SonarScanner'
   //  }
     steps {
-    withSonarQubeEnv(credentialsId: 'SONJEN'){ //installationName: 'sonarscanner') {
+   // withSonarQubeEnv(credentialsId: 'SONJEN'){ //installationName: 'sonarscanner') {
          sh '''$SCANNER_HOME/bin/sonar-scanner \
          -Dsonar.projectKey=Java_Ant \
          -Dsonar.projectName=Java_Ant \
@@ -50,7 +50,7 @@ pipeline {
          -Dsonar.exclusions=src/test/java/****/*.java \
          -Dsonar.java.libraries=/var/lib/jenkins/.m2/**/*.jar \
          -Dsonar.projectVersion=${BUILD_NUMBER}-${GIT_COMMIT_SHORT}'''
-       }
+     //  }
      }
 }
    stage('SQuality Gate') {
