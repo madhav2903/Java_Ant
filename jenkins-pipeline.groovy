@@ -41,17 +41,18 @@ pipeline {
               //sh "ant sonar -Dsonar.login=yourAuthenticationToken"
              // sh "antlib:org.sonar.ant:sonar"
 
-        snykSecurity(
+      //  snykSecurity(
 
-          snykInstallation: 'snyk@latest',
+         // snykInstallation: 'snyk@latest',
 
-         snykTokenId: 'Snyk_api',
+        // snykTokenId: 'Snyk_api',
+            snykSecurity snykInstallation: 'snyk@latest', snykTokenId: 'Snyk_api'
 
         //  additionalArguments: '--all-projects --detection-depth=<DEPTH>'
 
           // place other parameters here
 
-        )
+     //   )
                 
           }
        }
