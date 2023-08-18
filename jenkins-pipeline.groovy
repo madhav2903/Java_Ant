@@ -37,7 +37,9 @@ pipeline {
 
           steps('Sonarqube Analysis') {
         
-              sh "ant sonar"
+           environment {
+      SCANNER_HOME = tool 'sonarscanner'
+    }
               //sh "ant sonar -Dsonar.login=yourAuthenticationToken"
              // sh "antlib:org.sonar.ant:sonar"
 
