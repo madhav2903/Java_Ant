@@ -47,7 +47,7 @@ pipeline {
 
          snykTokenId: 'Snyk_api',
 
-          additionalArguments: '--all-projects --detection-depth=<DEPTH>'
+        //  additionalArguments: '--all-projects --detection-depth=<DEPTH>'
 
           // place other parameters here
 
