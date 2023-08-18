@@ -37,7 +37,7 @@ pipeline {
 
           steps('Sonarqube Analysis') {
         
-              //sh "ant sonar -v"
+              sh "ant sonar"
               //sh "ant sonar -Dsonar.login=yourAuthenticationToken"
              // sh "antlib:org.sonar.ant:sonar"
 
@@ -46,7 +46,7 @@ pipeline {
          // snykInstallation: 'snyk@latest',
 
         // snykTokenId: 'Snyk_api',
-            snykSecurity snykInstallation: 'snyk@latest', snykTokenId: 'Snyk_api'
+            //snykSecurity snykInstallation: 'snyk@latest', snykTokenId: 'Snyk_api'
 
         //  additionalArguments: '--all-projects --detection-depth=<DEPTH>'
 
