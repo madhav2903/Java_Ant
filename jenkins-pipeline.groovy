@@ -59,6 +59,7 @@ pipeline {
        waitForQualityGate abortPipeline: true
        }
   }
+   }
               //sh "ant sonar -Dsonar.login=yourAuthenticationToken"
              // sh "antlib:org.sonar.ant:sonar"
 
