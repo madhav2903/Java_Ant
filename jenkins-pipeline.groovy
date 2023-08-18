@@ -56,9 +56,11 @@ pipeline {
 //    checkout scm
 //  }
   stage('SonarQube Analysis') {
+      step { 
     def scannerHome = tool 'SonarScanner';
     withSonarQubeEnv() {
       sh "${scannerHome}/bin/sonar-scanner"
+    }
     }
   }
 
