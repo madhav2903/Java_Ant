@@ -45,7 +45,7 @@ pipeline {
 
           snykInstallation: 'snyk@latest',
 
-         snykTokenId: 'ab763548-654a-4eb2-b9a5-30a0368044b0',
+         snykTokenId: 'Snyk_api',
 
           // place other parameters here
 
