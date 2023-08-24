@@ -55,24 +55,25 @@ pipeline {
 //  stage('SCM') {
 //    checkout scm
 //  }
-  stage('SonarQube Analysis') {
-      step { 
-    def scannerHome = tool 'SonarScanner';
-    withSonarQubeEnv() {
-      sh "${scannerHome}/bin/sonar-scanner"
-    }
-    }
-  }
+         stage('SonarQube Analysis') {
+             step { 
+               def scannerHome = tool 'SonarScanner';
+               withSonarQubeEnv() {
+               sh "${scannerHome}/bin/sonar-scanner"
+                  }
+              
+          }
 
      
 
-   stage('SQuality Gate') {
-     steps {
-       timeout(time: 1, unit: 'MINUTES') {
-       waitForQualityGate abortPipeline: true
-       }
-  }
-   }       
+         stage('SQuality Gate') {
+           steps {
+             timeout(time: 1, unit: 'MINUTES') {
+             waitForQualityGate abortPipeline: true
+            }
+         }
+     }   
+}
 
         stage('Deploy') {
                 
